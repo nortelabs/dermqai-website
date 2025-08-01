@@ -47,59 +47,12 @@ export default function LandingPage() {
                   loop
                   muted
                   playsInline
-                  className="w-full max-w-[180px] md:max-w-[260px]"
+                  className="w-full max-w-[210px] md:max-w-[310px]"
                 />
             </div>
           </div>
         </div>
       </section>
-
-      {/* Problem Statement */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">The Skin Care Crisis</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Patients face critical barriers to dermatological care that put lives at risk
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-red-100 bg-red-50/50">
-              <CardContent className="p-8 text-center">
-                <Clock className="w-12 h-12 text-red-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Long Wait Times</h3>
-                <p className="text-gray-600 mb-4">
-                  Average 36.5-day wait to see a dermatologist—the longest among all medical specialties
-                </p>
-                <div className="text-2xl font-bold text-red-600">36.5 days</div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-orange-100 bg-orange-50/50">
-              <CardContent className="p-8 text-center">
-                <TrendingUp className="w-12 h-12 text-orange-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Rising Disease Burden</h3>
-                <p className="text-gray-600 mb-4">
-                  90,365 new melanoma diagnoses and 8,224 deaths recorded in 2021 alone
-                </p>
-                <div className="text-2xl font-bold text-orange-600">8,224 deaths</div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-yellow-100 bg-yellow-50/50">
-              <CardContent className="p-8 text-center">
-                <Shield className="w-12 h-12 text-yellow-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Diagnostic Uncertainty</h3>
-                <p className="text-gray-600 mb-4">
-                  Primary care physicians are 13x less likely to correctly identify melanoma
-                </p>
-                <div className="text-2xl font-bold text-yellow-600">13x less</div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>      
 
       {/* Features */}
       <section id="features" className="py-20 bg-gray-50">
@@ -177,6 +130,55 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
+
+      {/* Problem Statement */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">The Skin Care Crisis</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Patients face critical barriers to dermatological care that put lives at risk
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="border-red-100 bg-red-50/50">
+              <CardContent className="p-8 text-center">
+                <Clock className="w-12 h-12 text-red-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Long Wait Times</h3>
+                <p className="text-gray-600 mb-4">
+                  Average 36.5-day wait to see a dermatologist—the longest among all medical specialties
+                </p>
+                <div className="text-2xl font-bold text-red-600">36.5 days</div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-orange-100 bg-orange-50/50">
+              <CardContent className="p-8 text-center">
+                <TrendingUp className="w-12 h-12 text-orange-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Rising Disease Burden</h3>
+                <p className="text-gray-600 mb-4">
+                  90,365 new melanoma diagnoses and 8,224 deaths recorded in 2021 alone
+                </p>
+                <div className="text-2xl font-bold text-orange-600">8,224 deaths</div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-yellow-100 bg-yellow-50/50">
+              <CardContent className="p-8 text-center">
+                <Shield className="w-12 h-12 text-yellow-600 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Diagnostic Uncertainty</h3>
+                <p className="text-gray-600 mb-4">
+                  Primary care physicians are 13x less likely to correctly identify melanoma
+                </p>
+                <div className="text-2xl font-bold text-yellow-600">13x less</div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>      
+
+      
 
       {/* About Section */}
       <section id="about" className="py-20 bg-white">
