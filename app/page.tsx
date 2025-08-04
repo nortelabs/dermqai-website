@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge"
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Camera, Clock, Users, Shield, Smartphone, Stethoscope, TrendingUp, CheckCircle, Zap, FileText, BrainCircuit, Database, RefreshCw } from "lucide-react"
 
 export default function LandingPage() {
@@ -13,7 +15,7 @@ export default function LandingPage() {
             <span className="text-2xl font-bold text-gray-900">DermQ AI</span>
           </div>
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="mailto:mikaelmoise00@gmail.com">
+            <a href="#contact">
               <Button className="bg-emerald-600 hover:bg-emerald-700">Get Started</Button>
             </a>
           </nav>
@@ -32,7 +34,7 @@ export default function LandingPage() {
                 <p className="text-xl text-gray-600 leading-relaxed">
                   Get instant, professional-grade skin analysis anytime, anywhere.
                 </p>
-                <a href="mailto:mikaelmoise00@gmail.com">
+                <a href="#contact">
                   <Button className="bg-emerald-600 hover:bg-emerald-700">Get Started</Button>
                 </a>
               </div>
@@ -251,11 +253,41 @@ export default function LandingPage() {
       
 
 
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900">Get in Touch</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Have questions? We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p>
+          </div>
+          <div className="max-w-2xl mx-auto">
+            <form action="https://formspree.io/f/xanbdrjy" method="POST" className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                <Input id="name" name="name" type="text" placeholder="Your Name" />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <Input id="email" name="email" type="email" placeholder="your.email@example.com" />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                <Textarea id="message" name="message" placeholder="How can we help?" rows={5} />
+              </div>
+              <div className="text-center">
+                <Button type="submit" size="lg" className="bg-emerald-600 hover:bg-emerald-700">
+                  Send Message
+                </Button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="py-12 bg-gray-900">
+      <footer className="bg-gray-800 text-white py-12">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-white">&copy; 2025 DermQ AI. All rights reserved.</p>
-          <p className="mt-2 text-sm text-gray-400">This is not a substitute for professional medical advice.</p>
+          <p>&copy; 2024 DermQ AI. All rights reserved.</p>
         </div>
       </footer>
     </div>
