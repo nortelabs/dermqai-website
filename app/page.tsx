@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, ChangeEvent, FormEvent } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -6,6 +9,50 @@ import { Textarea } from "@/components/ui/textarea";
 import { Camera, Clock, Users, Shield, Smartphone, Stethoscope, TrendingUp, CheckCircle, Zap, FileText, BrainCircuit, Database, RefreshCw } from "lucide-react"
 
 export default function LandingPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('sending');
+
+    try {
+      const response = await fetch('https://formspree.io/f/xanbdrjy', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+        },
+        body: new FormData(e.currentTarget),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+        });
+        setTimeout(() => setStatus(''), 3000); // Clear status after 3 seconds
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      setStatus('error');
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -261,23 +308,25 @@ export default function LandingPage() {
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">Have questions? We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p>
           </div>
           <div className="max-w-2xl mx-auto">
-            <form action="https://formspree.io/f/xanbdrjy" method="POST" className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                <Input id="name" name="name" type="text" placeholder="Your Name" />
+                <Input id="name" name="name" type="text" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                <Input id="email" name="email" type="email" placeholder="your.email@example.com" />
+                <Input id="email" name="email" type="email" placeholder="your.email@example.com" value={formData.email} onChange={handleChange} required />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                <Textarea id="message" name="message" placeholder="How can we help?" rows={5} />
+                <Textarea id="message" name="message" placeholder="How can we help?" rows={5} value={formData.message} onChange={handleChange} required />
               </div>
               <div className="text-center">
-                <Button type="submit" size="lg" className="bg-emerald-600 hover:bg-emerald-700">
-                  Send Message
+                <Button type="submit" size="lg" className="bg-emerald-600 hover:bg-emerald-700 w-48" disabled={status === 'sending'}>
+                  {status === 'sending' ? 'Sending...' : 'Send Message'}
                 </Button>
+                {status === 'success' && <p className="mt-4 text-emerald-600">Message Sent!</p>}
+                {status === 'error' && <p className="mt-4 text-red-600">Something went wrong. Please try again.</p>}
               </div>
             </form>
           </div>
