@@ -13,7 +13,9 @@ export default function LandingPage() {
             <span className="text-2xl font-bold text-gray-900">DermQ AI</span>
           </div>
           <nav className="hidden md:flex items-center space-x-8">
-            <Button className="bg-emerald-600 hover:bg-emerald-700">Get Started</Button>
+            <a href="mailto:mikaelmoise00@gmail.com">
+              <Button className="bg-emerald-600 hover:bg-emerald-700">Get Started</Button>
+            </a>
           </nav>
         </div>
       </header>
@@ -30,7 +32,9 @@ export default function LandingPage() {
                 <p className="text-xl text-gray-600 leading-relaxed">
                   Get instant, professional-grade skin analysis anytime, anywhere.
                 </p>
-                <Button className="bg-emerald-600 hover:bg-emerald-700">Get Started</Button>
+                <a href="mailto:mikaelmoise00@gmail.com">
+                  <Button className="bg-emerald-600 hover:bg-emerald-700">Get Started</Button>
+                </a>
               </div>
             </div>
 
@@ -57,33 +61,75 @@ export default function LandingPage() {
             <h2 className="text-4xl font-bold text-gray-900">Simple Steps to Skin Clarity</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">Your path to understanding your skin health is just a few taps away.</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center p-6 border border-gray-100 rounded-lg bg-white">
-              <Camera className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">1. Take or Upload Photo</h3>
-              <p className="text-gray-600">Capture clear photos with our guided camera tool.</p>
-            </div>
-            <div className="text-center p-6 border border-gray-100 rounded-lg bg-white">
-              <Zap className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">2. AI Analysis</h3>
-              <p className="text-gray-600">Advanced algorithms analyze your skin in under 30 seconds.</p>
-            </div>
-            <div className="text-center p-6 border border-gray-100 rounded-lg bg-white">
-              <FileText className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">3. Get Results & Recommendations</h3>
-              <p className="text-gray-600">Receive detailed analysis, recommendations, and next steps.</p>
-            </div>
-            <div className="text-center p-6 border border-gray-100 rounded-lg bg-white">
-              <TrendingUp className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">4. Track Progress</h3>
-              <p className="text-gray-600">Monitor changes over time with intelligent tracking.</p>
-            </div>
+          <div className="relative grid md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="flex items-center justify-center w-16 h-16 bg-white border-2 border-emerald-500 rounded-full mx-auto mb-4 relative z-10">
+                  <Camera className="w-8 h-8 text-emerald-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">1. Upload Photo</h3>
+                <p className="text-gray-600 px-2">Capture a clear photo using our guided in-app camera.</p>
+              </div>
+              <div className="text-center">
+                <div className="flex items-center justify-center w-16 h-16 bg-white border-2 border-emerald-500 rounded-full mx-auto mb-4 relative z-10">
+                  <Zap className="w-8 h-8 text-emerald-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">2. AI Analysis</h3>
+                <p className="text-gray-600 px-2">Our algorithm analyzes your image in seconds.</p>
+              </div>
+              <div className="text-center">
+                <div className="flex items-center justify-center w-16 h-16 bg-white border-2 border-emerald-500 rounded-full mx-auto mb-4 relative z-10">
+                  <FileText className="w-8 h-8 text-emerald-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">3. Get Results</h3>
+                <p className="text-gray-600 px-2">Receive a detailed report and personalized recommendations.</p>
+              </div>
+              <div className="text-center">
+                <div className="flex items-center justify-center w-16 h-16 bg-white border-2 border-emerald-500 rounded-full mx-auto mb-4 relative z-10">
+                  <TrendingUp className="w-8 h-8 text-emerald-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">4. Track Progress</h3>
+                <p className="text-gray-600 px-2">Monitor your skin's health over time with intelligent tracking.</p>
+              </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Technology Overview Section */}
+      <section id="technology" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900">Powered by Advanced AI</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Our technology is built on a foundation of extensive data and continuous improvement.</p>
+          </div>
+          <div className="grid lg:grid-cols-3 gap-8">
+            <Card className="border-blue-100 bg-blue-50/50">
+              <CardContent className="p-8">
+                <BrainCircuit className="w-12 h-12 text-blue-600 mb-6" />
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Intelligent AI</h3>
+                <p className="text-gray-600">Our simple infographic shows our machine learning process.</p>
+              </CardContent>
+            </Card>
+            <Card className="border-blue-100 bg-blue-50/50">
+              <CardContent className="p-8">
+                <Database className="w-12 h-12 text-blue-600 mb-6" />
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Massive Training Data</h3>
+                <p className="text-gray-600">Trained on 1M+ dermatologist-verified images for high accuracy.</p>
+              </CardContent>
+            </Card>
+            <Card className="border-blue-100 bg-blue-50/50">
+              <CardContent className="p-8">
+                <RefreshCw className="w-12 h-12 text-blue-600 mb-6" />
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Continuous Learning</h3>
+                <p className="text-gray-600">Our model improves its accuracy with every new analysis performed.</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
       {/* Features */}
-      <section id="features" className="py-20">
+      <section id="features" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Built for Everyone</h2>
@@ -93,7 +139,7 @@ export default function LandingPage() {
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            <Card className="border-emerald-100">
+            <Card>
               <CardContent className="p-8">
                 <Users className="w-12 h-12 text-emerald-600 mb-6" />
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">For Patients</h3>
@@ -114,7 +160,7 @@ export default function LandingPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-emerald-100">
+            <Card>
               <CardContent className="p-8">
                 <Stethoscope className="w-12 h-12 text-emerald-600 mb-6" />
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">For Primary Care</h3>
@@ -135,7 +181,7 @@ export default function LandingPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-emerald-100">
+            <Card>
               <CardContent className="p-8">
                 <Shield className="w-12 h-12 text-emerald-600 mb-6" />
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">For Underserved Communities</h3>
@@ -175,9 +221,28 @@ export default function LandingPage() {
             </div>
             <div className="p-8 bg-emerald-50 border border-emerald-100 rounded-lg flex flex-col justify-center">
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Solution</h3>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-gray-600 mb-6">
                 DermQ AI provides instant analysis, progress tracking, and professional guidance to help you take control of your skin health.
               </p>
+              <h4 className="text-lg font-semibold text-gray-800 mb-3">Benefit Highlights:</h4>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-center">
+                  <span className="mr-2">⚡</span>
+                  <span>Instant results in under 30 seconds</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="mr-2">📱</span>
+                  <span>Anywhere, anytime convenience</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="mr-2">🎯</span>
+                  <span>Professional-grade accuracy</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="mr-2">💰</span>
+                  <span>Fraction of consultation costs</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -185,38 +250,6 @@ export default function LandingPage() {
 
       
 
-      {/* Technology Overview Section */}
-      <section id="technology" className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900">Powered by Advanced AI</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Our technology is built on a foundation of extensive data and continuous improvement.</p>
-          </div>
-          <div className="grid lg:grid-cols-3 gap-8">
-            <Card className="border-blue-100 bg-blue-50/50">
-              <CardContent className="p-8">
-                <BrainCircuit className="w-12 h-12 text-blue-600 mb-6" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Intelligent AI</h3>
-                <p className="text-gray-600">Our simple infographic shows our machine learning process.</p>
-              </CardContent>
-            </Card>
-            <Card className="border-blue-100 bg-blue-50/50">
-              <CardContent className="p-8">
-                <Database className="w-12 h-12 text-blue-600 mb-6" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Massive Training Data</h3>
-                <p className="text-gray-600">Trained on 1M+ dermatologist-verified images for high accuracy.</p>
-              </CardContent>
-            </Card>
-            <Card className="border-blue-100 bg-blue-50/50">
-              <CardContent className="p-8">
-                <RefreshCw className="w-12 h-12 text-blue-600 mb-6" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Continuous Learning</h3>
-                <p className="text-gray-600">Our model improves its accuracy with every new analysis performed.</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="py-12 bg-gray-900">
