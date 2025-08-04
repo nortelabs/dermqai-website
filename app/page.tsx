@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Camera, Clock, Users, Shield, Smartphone, Stethoscope, TrendingUp, CheckCircle } from "lucide-react"
+import { Camera, Clock, Users, Shield, Smartphone, Stethoscope, TrendingUp, CheckCircle, Zap, FileText, BrainCircuit, Database, RefreshCw } from "lucide-react"
 
 export default function LandingPage() {
   return (
@@ -10,13 +10,9 @@ export default function LandingPage() {
       <header className="border-b border-gray-100 bg-white/95 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <img src="/favicon.ico" alt="DermQ AI" className="w-8 h-8" />
             <span className="text-2xl font-bold text-gray-900">DermQ AI</span>
           </div>
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#about" className="text-gray-600 hover:text-gray-900 transition-colors">
-              About
-            </a>
             <Button className="bg-emerald-600 hover:bg-emerald-700">Get Started</Button>
           </nav>
         </div>
@@ -29,11 +25,10 @@ export default function LandingPage() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                  Skip the <span className="text-emerald-600">36-day wait</span> for skin care
+                  Your AI Dermatologist in Your Pocket
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Get instant AI-powered skin condition analysis through your smartphone camera. Identify potential
-                  issues early and get guided to appropriate care.
+                  Get instant, professional-grade skin analysis anytime, anywhere.
                 </p>
                 <Button className="bg-emerald-600 hover:bg-emerald-700">Get Started</Button>
               </div>
@@ -54,8 +49,41 @@ export default function LandingPage() {
         </div>
       </section>
 
+
+      {/* How It Works Section */}
+      <section id="how-it-works" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900">Simple Steps to Skin Clarity</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Your path to understanding your skin health is just a few taps away.</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center p-6 border border-gray-100 rounded-lg bg-white">
+              <Camera className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">1. Take or Upload Photo</h3>
+              <p className="text-gray-600">Capture clear photos with our guided camera tool.</p>
+            </div>
+            <div className="text-center p-6 border border-gray-100 rounded-lg bg-white">
+              <Zap className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">2. AI Analysis</h3>
+              <p className="text-gray-600">Advanced algorithms analyze your skin in under 30 seconds.</p>
+            </div>
+            <div className="text-center p-6 border border-gray-100 rounded-lg bg-white">
+              <FileText className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">3. Get Results & Recommendations</h3>
+              <p className="text-gray-600">Receive detailed analysis, recommendations, and next steps.</p>
+            </div>
+            <div className="text-center p-6 border border-gray-100 rounded-lg bg-white">
+              <TrendingUp className="w-12 h-12 text-emerald-600 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">4. Track Progress</h3>
+              <p className="text-gray-600">Monitor changes over time with intelligent tracking.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features */}
-      <section id="features" className="py-20 bg-gray-50">
+      <section id="features" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Built for Everyone</h2>
@@ -131,95 +159,61 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Problem Statement */}
-      <section className="py-20 bg-gray-50">
+      {/* Problem & Solution Section */}
+      <section id="problem-solution" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">The Skin Care Crisis</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Patients face critical barriers to dermatological care that put lives at risk
-            </p>
+            <h2 className="text-4xl font-bold text-gray-900">Bridging the Gap in Dermatological Care</h2>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-red-100 bg-red-50/50">
-              <CardContent className="p-8 text-center">
-                <Clock className="w-12 h-12 text-red-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Long Wait Times</h3>
-                <p className="text-gray-600 mb-4">
-                  Average 36.5-day wait to see a dermatologist—the longest among all medical specialties
-                </p>
-                <div className="text-2xl font-bold text-red-600">36.5 days</div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-orange-100 bg-orange-50/50">
-              <CardContent className="p-8 text-center">
-                <TrendingUp className="w-12 h-12 text-orange-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Rising Disease Burden</h3>
-                <p className="text-gray-600 mb-4">
-                  90,365 new melanoma diagnoses and 8,224 deaths recorded in 2021 alone
-                </p>
-                <div className="text-2xl font-bold text-orange-600">8,224 deaths</div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-yellow-100 bg-yellow-50/50">
-              <CardContent className="p-8 text-center">
-                <Shield className="w-12 h-12 text-yellow-600 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Diagnostic Uncertainty</h3>
-                <p className="text-gray-600 mb-4">
-                  Primary care physicians are 13x less likely to correctly identify melanoma
-                </p>
-                <div className="text-2xl font-bold text-yellow-600">13x less</div>
-              </CardContent>
-            </Card>
+          <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+            <div className="p-8 bg-red-50 border border-red-100 rounded-lg flex flex-col justify-center">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">The Problem</h3>
+              <p className="text-4xl font-bold text-red-600">67%</p>
+              <p className="text-lg text-gray-600 mt-2">
+                of people delay dermatologist visits due to long wait times and costs.
+              </p>
+            </div>
+            <div className="p-8 bg-emerald-50 border border-emerald-100 rounded-lg flex flex-col justify-center">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Solution</h3>
+              <p className="text-lg text-gray-600">
+                DermQ AI provides instant analysis, progress tracking, and professional guidance to help you take control of your skin health.
+              </p>
+            </div>
           </div>
         </div>
-      </section>      
+      </section>
 
       
 
-      {/* About Section */}
-      <section id="about" className="py-20 bg-white">
+      {/* Technology Overview Section */}
+      <section id="technology" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Meet the Team</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The minds behind DermQ AI, dedicated to revolutionizing dermatology.
-            </p>
+            <h2 className="text-4xl font-bold text-gray-900">Powered by Advanced AI</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">Our technology is built on a foundation of extensive data and continuous improvement.</p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-12">
-            {/* Team Member 1 */}
-            <div className="text-center">
-              <div className="w-32 h-32 rounded-full bg-gray-200 mx-auto mb-4"></div>
-              <h3 className="text-xl font-semibold text-gray-900">John Doe</h3>
-              <p className="text-gray-600">Co-Founder & CEO</p>
-              <p className="mt-2 text-sm text-gray-500">
-                A brief bio about the team member, their expertise, and their role in the company.
-              </p>
-            </div>
-
-            {/* Team Member 2 */}
-            <div className="text-center">
-              <div className="w-32 h-32 rounded-full bg-gray-200 mx-auto mb-4"></div>
-              <h3 className="text-xl font-semibold text-gray-900">Jane Smith</h3>
-              <p className="text-gray-600">Co-Founder & CTO</p>
-              <p className="mt-2 text-sm text-gray-500">
-                A brief bio about the team member, their expertise, and their role in the company.
-              </p>
-            </div>
-
-            {/* Team Member 3 */}
-            <div className="text-center">
-              <div className="w-32 h-32 rounded-full bg-gray-200 mx-auto mb-4"></div>
-              <h3 className="text-xl font-semibold text-gray-900">Alex Johnson</h3>
-              <p className="text-gray-600">Lead AI Researcher</p>
-              <p className="mt-2 text-sm text-gray-500">
-                A brief bio about the team member, their expertise, and their role in the company.
-              </p>
-            </div>
+          <div className="grid lg:grid-cols-3 gap-8">
+            <Card className="border-blue-100 bg-blue-50/50">
+              <CardContent className="p-8">
+                <BrainCircuit className="w-12 h-12 text-blue-600 mb-6" />
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Intelligent AI</h3>
+                <p className="text-gray-600">Our simple infographic shows our machine learning process.</p>
+              </CardContent>
+            </Card>
+            <Card className="border-blue-100 bg-blue-50/50">
+              <CardContent className="p-8">
+                <Database className="w-12 h-12 text-blue-600 mb-6" />
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Massive Training Data</h3>
+                <p className="text-gray-600">Trained on 1M+ dermatologist-verified images for high accuracy.</p>
+              </CardContent>
+            </Card>
+            <Card className="border-blue-100 bg-blue-50/50">
+              <CardContent className="p-8">
+                <RefreshCw className="w-12 h-12 text-blue-600 mb-6" />
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Continuous Learning</h3>
+                <p className="text-gray-600">Our model improves its accuracy with every new analysis performed.</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
